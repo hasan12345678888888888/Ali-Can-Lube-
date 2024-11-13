@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+ 
+<body>
+    <header>
+        <div class="top-banner">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+
+            <div id="textCarousel" class="carousel slide text-slider" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <p>Genuine Ali Can lube Motorcycle Parts available in Pakistan.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p>Your order will arrive within 3-5 business days.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p>Free delivery nationwide on orders over PKR 2,500/-.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="container-fluid d-flex align-items-center justify-content-between">
+                <div class="icons order-1">
+                    <a href="#" onclick="openSearchModal()"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="#"><i class="fa-regular fa-user"></i></a>
+                    <div class="icons order-1">
+                        <a href="#"><i class="fa-solid fa-cart-shopping"></i>
+                            <span class="cart-count">0</span> <!-- This will update dynamically -->
+                        </a>
+                    </div>
+                </div>
+
+                <div class="logo mx-auto order-2">
+                    <img src="pics/company_logo-removebg-preview.png" alt="Ali Lube Oil" class="d-block">
+                </div>
+                <div class="spacer order-3">
+                    <!-- This empty div ensures spacing on the right -->
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="Allcategory.html" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        All Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">All products</a>
+                        <a class="dropdown-item" href="#">New Arrivals</a>
+                        <a class="dropdown-item" href="#">Air Filters & Intakes</a>
+                        <a class="dropdown-item" href="#">Bearings</a>
+                        <a class="dropdown-item" href="#">Body Parts</a>
+                        <a class="dropdown-item" href="#">Brakes</a>
+                        <a class="dropdown-item" href="#">Battery</a>
+                        <a class="dropdown-item" href="#">Carburetors</a>
+                        <a class="dropdown-item" href="#">Control Cables</a>
+                        <a class="dropdown-item" href="#">Engine Parts</a>
+                        <a class="dropdown-item" href="#">Electrical Parts</a>
+                        <a class="dropdown-item" href="#">Jumps & Shocks</a>
+                        <a class="dropdown-item" href="#">Lubricants</a>
+                        <a class="dropdown-item" href="#">Meters</a>
+                        <a class="dropdown-item" href="#">Wheels & Accessories</a>
+                        <a class="dropdown-item" href="#">Wiring</a>
+
+                        <!-- Add more categories as needed -->
+                    </div>
+                </li>
+                <li><a href="puncture.html">Puncture Free Solution Cars</a></li>
+                <li><a href="blog.html">Blogs</a></li>
+                <li><a href="underRs.500.html">Under Rs. 500</a></li>
+                <li><a href="underRs.1000.html">Under Rs. 1,000</a></li>
+                <li><a href="underRs.2000.html">Under Rs. 2,000</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="blog-section">
+        <div class="blog-content">
+            <div class="blog-image">
+                <img src="pics/osama blog pic.jpg" alt="CEO of Ali Can Oil Lube Company">
+            </div>
+            <div class="blog-text">
+                <h2>CEO Message</h2>
+                <p>“As CEO of Ali Can Oil Lube Company, I’m proud to lead a team dedicated to delivering fast, reliable, and high-quality oil change and vehicle maintenance services. Our mission is rooted in customer satisfaction, efficiency, and environmental responsibility. We prioritize not only a quick turnaround for our clients but also a commitment to sustainable practices, such as proper recycling and disposal of used oil. By fostering a safe, supportive work environment and building trust within our community, we aim to set the standard for integrity and service in the industry. Our goal is simple: to keep our customers’ vehicles running smoothly while making a positive impact on the community we serve.”</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Search Modal -->
+    <div id="searchModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeSearchModal()">&times;</span>
+            <input type="text" id="searchInput" placeholder="Search for parts..." autofocus>
+            <button onclick="performSearch()">Search</button>
+        </div>
+    </div>
+
+    <!-- Other sections of your website go here -->
+
+    <!-- JavaScript for the Modal -->
+    <script>
+        function openSearchModal() {
+            document.getElementById('searchModal').style.display = "block";
+        }
+
+        function closeSearchModal() {
+            document.getElementById('searchModal').style.display = "none";
+        }
+
+        function performSearch() {
+            var searchTerm = document.getElementById('searchInput').value;
+            alert('Search for: ' + searchTerm);
+            // Here you will typically handle the search term with your backend.
+            closeSearchModal();
+        }
+    </script>
+    
+    <!-- Chatbox Button and Modal -->
+<div id="chatContainer">
+    <div id="chatButton" onclick="openChat()">
+        <span class="chat-icon">💬</span> Chat
+    </div>
+
+    <div id="chatBox">
+        <div class="chatHeader">
+            <span>Crowneshop</span>
+            <button id="closeChat" onclick="closeChat()">X</button>
+        </div>
+        <div class="chatContent">
+            <div id="initialChat" class="chatSection">
+                <p>👋 Hi, message us with any questions. We're happy to help!</p>
+                <button class="optionButton" onclick="showTrackOrder()">Track my order</button>
+                <button class="optionButton" onclick="showReturnPolicy()">What is your return policy?</button>
+            </div>
+
+            <div id="trackOrder" class="chatSection hidden">
+                <p>To see your order status, please provide your order details.</p>
+                <input type="text" placeholder="Enter order information">
+                <button class="optionButton">Submit</button>
+            </div>
+
+            <div id="returnPolicy" class="chatSection hidden">
+                <p>Our return policy allows for returns within 30 days of purchase. Please ensure that the product is in its original packaging.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Open the chat box
+    function openChat() {
+        document.getElementById('chatBox').classList.add('show');
+        document.getElementById('initialChat').classList.add('show');
+    }
+
+    // Close the chat box
+    function closeChat() {
+        document.getElementById('chatBox').classList.remove('show');
+        document.querySelectorAll('.chatSection').forEach(section => section.classList.remove('show'));
+    }
+
+    // Show the "Track my order" section
+    function showTrackOrder() {
+        document.getElementById('initialChat').classList.remove('show');
+        document.getElementById('trackOrder').classList.add('show');
+    }
+
+    // Show the "Return Policy" section
+    function showReturnPolicy() {
+        document.getElementById('initialChat').classList.remove('show');
+        document.getElementById('returnPolicy').classList.add('show');
+    }
+</script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="blog.js"></script>
+</body>
+
+</html>
